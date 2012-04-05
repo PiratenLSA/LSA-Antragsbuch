@@ -1,0 +1,82 @@
+\documentclass[halfparskip,a4paper,10pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}  % to make umlauts work
+\usepackage{ulem} % only needed for \sout (strike out)
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=2cm]{geometry} % margins
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[pdftex,a4paper=true, colorlinks=true, pdftitle={Antragsbuch LPT RLP 2010.2}, pdfsubject={Antragsbuch}, pdfauthor={Jochen Schaefer (JoSch)}, pdfpagemode=UseNone, pdfstartview=FitH,pdfhighlight={/N}, pdfversion=1.7]{hyperref}
+\usepackage{titletoc}
+\usepackage{titlesec}
+
+\newcounter{abstimmung}
+\setcounter{abstimmung}{0}
+\newcommand{\antrag}[1]{{\sffamily{Antragssteller: #1}}}
+\newcommand{\abstimmung}{\begin{Form}%
+\CheckBox[name=ja\arabic{abstimmung}]{Ja}\ \ %
+\CheckBox[name=nein\arabic{abstimmung}]{Nein}\ \  %
+\CheckBox[name=ent\arabic{abstimmung}]{Enthaltung}\\\medskip Notizen:\\%
+\TextField[bordercolor={1 0 0},name=line\arabic{abstimmung},width=\linewidth,multiline=true,height=7em]{ }\smallskip%
+\end{Form}%
+\stepcounter{abstimmung}\\}
+
+\newcommand{\konkurrenz}[1]{ konkurrierend zu \autoref{#1} }
+\newcommand{\zusatz}[1]{ ergänzend zu \autoref{#1} }
+\newcommand{\version}[1]{ Wiki-Version: {#1} }
+
+%% Spezielle Zähler
+\newcounter{satzung}[part]
+\newcommand{\satzung}[1]{\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
+\newcommand{\satzungname}{SÄA}
+
+\newcounter{wahlprogramm}[part]
+\newcommand{\wahlprogramm}[1]{\refstepcounter{wahlprogramm}\setcounter{subsubsection}{0}%
+\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{section}.\arabic{wahlprogramm}} #1}%
+\medskip\textbf{\large WPA \arabic{section}.\arabic{wahlprogramm} - #1}\smallskip\\}
+\newcommand{\wahlprogrammname}{WPA}
+
+\makeatletter
+\@addtoreset{section}{part}
+\@addtoreset{wahlprogramm}{section}
+\makeatother
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+
+\title{Antragsbuch für die Landesmitgliederversammlung 2011.1}
+\author{Piratenpartei Sachsen-Anhalt}
+\date{Stand: \today}
+
+\begin{document}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
+
+\setcounter{tocdepth}{2}
+\maketitle
+\tableofcontents
+
+\include{satzung}
+%%\include{grundsatz}
+%%\include{wp_praeambel}
+%%\include{wp_datenschutz}
+%%\include{wp_transparenz}
+%%\include{wp_bildung}
+%%\include{wp_demokratie}
+%%\include{wp_ip}
+%%\include{wp_openaccess}
+%%\include{wp_monopol}
+%%\include{wp_selbstbestimmung}
+%%\include{wp_gesundheit}
+%%\include{wp_wirtschaft}
+%%\include{wp_sozial}
+%%\include{wp_kultur}
+%%\include{wp_finanzen}
+%%\include{wp_umwelt}
+%%\include{wp_energie}
+%%\include{wp_justiz}
+%%\include{wp_verbraucher}
+%%\include{wp_nachwort}
+
+
+\end{document}
