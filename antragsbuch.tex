@@ -10,6 +10,9 @@
 \usepackage{titletoc}
 \usepackage{titlesec}
 
+\newcommand{\Gu}{\glqq}	%Gänsefüßchen unten
+\newcommand{\Go}{\grqq} 	%Gänsefüßchen oben
+
 \newcounter{abstimmung}
 \setcounter{abstimmung}{0}
 \newcommand{\antrag}[1]{{\sffamily{Antragssteller: #1}}}
@@ -25,15 +28,22 @@
 \newcommand{\zusatz}[1]{ ergänzend zu \autoref{#1} }
 \newcommand{\version}[1]{ Wiki-Version: {#1} }
 
+\newcommand{\einruecken}[1]{
+\par
+\begingroup
+\leftskip=5mm
+{#1}
+\par
+\endgroup
+}
+
 %% Spezielle Zähler
 \newcounter{satzung}[part]
 \newcommand{\satzung}[1]{\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
 \newcommand{\satzungname}{SÄA}
 
 \newcounter{wahlprogramm}[part]
-\newcommand{\wahlprogramm}[1]{\refstepcounter{wahlprogramm}\setcounter{subsubsection}{0}%
-\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{section}.\arabic{wahlprogramm}} #1}%
-\medskip\textbf{\large WPA \arabic{section}.\arabic{wahlprogramm} - #1}\smallskip\\}
+\newcommand{\wahlprogramm}[1]{\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
 \newcommand{\wahlprogrammname}{WPA}
 
 \makeatletter
@@ -57,6 +67,7 @@
 \tableofcontents
 
 \include{satzung}
+\include{wp_allgemein}
 %%\include{grundsatz}
 %%\include{wp_praeambel}
 %%\include{wp_datenschutz}
