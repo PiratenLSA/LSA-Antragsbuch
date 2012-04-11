@@ -39,11 +39,11 @@
 
 %% Spezielle Zähler
 \newcounter{satzung}[part]
-\newcommand{\satzung}[1]{\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
+\newcommand{\satzung}[1]{\vspace{0.5cm}\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
 \newcommand{\satzungname}{SÄA}
 
 \newcounter{wahlprogramm}[part]
-\newcommand{\wahlprogramm}[1]{\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
+\newcommand{\wahlprogramm}[1]{\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
 \newcommand{\wahlprogrammname}{WPA}
 
 \makeatletter
@@ -68,26 +68,5 @@
 
 \include{satzung}
 \include{wp_allgemein}
-%%\include{grundsatz}
-%%\include{wp_praeambel}
-%%\include{wp_datenschutz}
-%%\include{wp_transparenz}
-%%\include{wp_bildung}
-%%\include{wp_demokratie}
-%%\include{wp_ip}
-%%\include{wp_openaccess}
-%%\include{wp_monopol}
-%%\include{wp_selbstbestimmung}
-%%\include{wp_gesundheit}
-%%\include{wp_wirtschaft}
-%%\include{wp_sozial}
-%%\include{wp_kultur}
-%%\include{wp_finanzen}
-%%\include{wp_umwelt}
-%%\include{wp_energie}
-%%\include{wp_justiz}
-%%\include{wp_verbraucher}
-%%\include{wp_nachwort}
-
 
 \end{document}
