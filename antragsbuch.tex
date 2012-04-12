@@ -1,5 +1,6 @@
 \documentclass[halfparskip,a4paper,10pt]{scrartcl}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}  % to make umlauts work
 \usepackage{ulem} % only needed for \sout (strike out)
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=2cm]{geometry} % margins
@@ -53,6 +54,8 @@
 \newcounter{positionspapier}[part]
 \newcommand{\positionspapier}[1]{\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
 
+\newcommand{\sonstigerantrag}[3]{\vspace{0.5cm}\addcontentsline{toc}{subsection}{#1 \numberline{#2} #3}\textbf{\Large #1 #2 - #3}\smallskip\\}
+
 \makeatletter
 \@addtoreset{section}{part}
 \@addtoreset{wahlprogramm}{section}
@@ -76,5 +79,6 @@
 \include{satzung}
 \include{wahlprogramm}
 \include{positionspapier}
+\include{sonstigerantrag}
 
 \end{document}
