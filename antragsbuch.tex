@@ -54,7 +54,11 @@
 \newcounter{positionspapier}[part]
 \newcommand{\positionspapier}[1]{\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
 
-\newcommand{\sonstigerantrag}[3]{\vspace{0.5cm}\addcontentsline{toc}{subsection}{#1 \numberline{#2} #3}\textbf{\Large #1 #2 - #3}\smallskip\\}
+\newcounter{sonstigerantrag}[part]
+\newcommand{\sonstigerantrag}[1]{\vspace{0.5cm}\refstepcounter{sonstigerantrag}\addcontentsline{toc}{subsection}{SA \numberline{\arabic{sonstigerantrag}} #1}\textbf{\Large SA \arabic{sonstigerantrag} - #1}\smallskip\\}
+
+\newcounter{goantrag}[part]
+\newcommand{\goantrag}[1]{\vspace{0.5cm}\refstepcounter{goantrag}\addcontentsline{toc}{subsection}{GOA \numberline{\arabic{goantrag}} #1}\textbf{\Large GOA \arabic{goantrag} - #1}\smallskip\\}
 
 \makeatletter
 \@addtoreset{section}{part}
@@ -79,6 +83,7 @@
 \include{satzung}
 \include{wahlprogramm}
 \include{positionspapier}
+\include{goantrag}
 \include{sonstigerantrag}
 
 \end{document}
