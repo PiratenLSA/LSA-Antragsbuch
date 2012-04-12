@@ -46,15 +46,12 @@
 %% Spezielle Zähler
 \newcounter{satzung}[part]
 \newcommand{\satzung}[1]{\vspace{0.5cm}\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
-\newcommand{\satzungname}{SÄA}
 
 \newcounter{wahlprogramm}[part]
 \newcommand{\wahlprogramm}[1]{\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
-\newcommand{\wahlprogrammname}{WPA}
 
 \newcounter{positionspapier}[part]
-\newcommand{\positionspapier}[1]{\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{positionspapier}} #1}\textbf{\Large PA \arabic{positionspapier} - #1}\smallskip\\}
-\newcommand{\positionspapiername}{PA}
+\newcommand{\positionspapier}[1]{\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
 
 \makeatletter
 \@addtoreset{section}{part}
