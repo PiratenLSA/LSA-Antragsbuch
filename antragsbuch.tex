@@ -52,6 +52,10 @@
 \newcommand{\wahlprogramm}[1]{\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
 \newcommand{\wahlprogrammname}{WPA}
 
+\newcounter{positionspapier}[part]
+\newcommand{\positionspapier}[1]{\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{positionspapier}} #1}\textbf{\Large PA \arabic{positionspapier} - #1}\smallskip\\}
+\newcommand{\positionspapiername}{PA}
+
 \makeatletter
 \@addtoreset{section}{part}
 \@addtoreset{wahlprogramm}{section}
@@ -74,5 +78,6 @@
 
 \include{satzung}
 \include{wahlprogramm}
+\include{positionspapier}
 
 \end{document}
