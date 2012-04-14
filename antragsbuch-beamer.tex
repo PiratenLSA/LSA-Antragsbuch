@@ -51,6 +51,9 @@
 \newcounter{wahlprogramm}[part]
 \newcommand{\wahlprogramm}[1]{\newpage\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
 
+\newcounter{grundsatzprogramm}[part]
+\newcommand{\grundsatzprogramm}[1]{\newpage\vspace{0.5cm}\refstepcounter{grundsatzprogramm}\addcontentsline{toc}{subsection}{GP \numberline{\arabic{grundsatzprogramm}} #1}\textbf{\Large GP \arabic{grundsatzprogramm} - #1}\smallskip\\}
+
 \newcounter{positionspapier}[part]
 \newcommand{\positionspapier}[1]{\newpage\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
 
@@ -64,6 +67,7 @@
 \@addtoreset{section}{part}
 \@addtoreset{satzung}{section}
 \@addtoreset{wahlprogramm}{section}
+\@addtoreset{grundsatzprogramm}{section}
 \@addtoreset{positionspapier}{section}
 \@addtoreset{sonstigerantrag}{section}
 \@addtoreset{goantrag}{section}
@@ -87,6 +91,7 @@
 
 \include{satzung}
 \include{wahlprogramm}
+\include{grundsatzprogramm}
 \include{positionspapier}
 \include{goantrag}
 \include{sonstigerantrag}
