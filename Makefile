@@ -7,4 +7,9 @@ clean:
 antragsbuch.pdf: antragsbuch.tex satzung.tex wahlprogramm.tex
 	pdflatex antragsbuch.tex
 
-.PHONY: antragsbuch.pdf
+beamer: antragsbuch-beamer.pdf
+
+antragsbuch-beamer.pdf: antragsbuch-beamer.tex satzung.tex wahlprogramm.tex
+	pdflatex antragsbuch-beamer.tex
+
+.PHONY: antragsbuch.pdf antragsbuch-beamer.pdf

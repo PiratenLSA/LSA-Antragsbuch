@@ -1,0 +1,94 @@
+\documentclass[halfparskip,landscape,18pt]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}  % to make umlauts work
+\usepackage{ulem} % only needed for \sout (strike out)
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=2cm]{geometry} % margins
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[pdftex,a4paper=true, colorlinks=true, pdftitle={Antragsbuch LPT LSA 2012.1}, pdfsubject={Antragsbuch}, pdfauthor={Christoph Giesel}, pdfpagemode=UseNone, pdfstartview=FitH,pdfhighlight={/N}, pdfversion=1.7]{hyperref}
+\usepackage{titletoc}
+\usepackage{titlesec}
+
+\newcommand{\Gu}{\glqq}	%Gänsefüßchen unten
+\newcommand{\Go}{\grqq} 	%Gänsefüßchen oben
+
+\newcounter{abstimmung}
+\setcounter{abstimmung}{0}
+\newcommand{\antrag}[1]{{\sffamily{Antragssteller: #1}}}
+\newcommand{\abstimmung}{\begin{Form}%
+\CheckBox[name=ja\arabic{abstimmung}]{Ja}\ \ %
+\CheckBox[name=nein\arabic{abstimmung}]{Nein}\ \  %
+\CheckBox[name=ent\arabic{abstimmung}]{Enthaltung}\\\medskip Notizen:\\%
+\TextField[bordercolor={1 0 0},name=line\arabic{abstimmung},width=\linewidth,multiline=true,height=7em]{ }\smallskip%
+\end{Form}%
+\stepcounter{abstimmung}\\}
+
+\newcommand{\konkurrenz}[1]{ konkurrierend zu \autoref{#1} }
+\newcommand{\zusatz}[1]{ ergänzend zu \autoref{#1} }
+\newcommand{\version}[1]{ Wiki-Version: {#1} }
+
+\newcommand{\einruecken}[1]{
+\par
+\begingroup
+\leftskip=5mm
+{#1}
+\par
+\endgroup
+}
+
+\newcommand{\begruendung}[1]{
+%\paragraph{Begründung}:
+%
+%#1
+}
+
+%% Spezielle Zähler
+\newcounter{satzung}[part]
+\newcommand{\satzung}[1]{\newpage\vspace{0.5cm}\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
+
+\newcounter{wahlprogramm}[part]
+\newcommand{\wahlprogramm}[1]{\newpage\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
+
+\newcounter{positionspapier}[part]
+\newcommand{\positionspapier}[1]{\newpage\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
+
+\newcounter{sonstigerantrag}[part]
+\newcommand{\sonstigerantrag}[1]{\newpage\vspace{0.5cm}\refstepcounter{sonstigerantrag}\addcontentsline{toc}{subsection}{SA \numberline{\arabic{sonstigerantrag}} #1}\textbf{\Large SA \arabic{sonstigerantrag} - #1}\smallskip\\}
+
+\newcounter{goantrag}[part]
+\newcommand{\goantrag}[1]{\newpage\vspace{0.5cm}\refstepcounter{goantrag}\addcontentsline{toc}{subsection}{GOA \numberline{\arabic{goantrag}} #1}\textbf{\Large GOA \arabic{goantrag} - #1}\smallskip\\}
+
+\makeatletter
+\@addtoreset{section}{part}
+\@addtoreset{satzung}{section}
+\@addtoreset{wahlprogramm}{section}
+\@addtoreset{positionspapier}{section}
+\@addtoreset{sonstigerantrag}{section}
+\@addtoreset{goantrag}{section}
+\makeatother
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+
+\title{Antragsbuch für den Landesparteitag 2012.1}
+\author{Piratenpartei Sachsen-Anhalt}
+\date{Stand: \today}
+
+\begin{document}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+\titlespacing*{\paragraph}{0pt}{0pt}{0pt}
+
+\setcounter{tocdepth}{2}
+\maketitle
+\pdfbookmark[1]{Inhaltsverzeichnis}{toc}
+\tableofcontents
+
+\include{satzung}
+\include{wahlprogramm}
+\include{positionspapier}
+\include{goantrag}
+\include{sonstigerantrag}
+
+\end{document}
