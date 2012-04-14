@@ -39,26 +39,26 @@
 }
 
 \newcommand{\begruendung}[1]{
-%\paragraph{Begründung}:
-%
-%#1
+\paragraph{Begründung}:
+
+#1
 }
 
 %% Spezielle Zähler
 \newcounter{satzung}[part]
-\newcommand{\satzung}[1]{\vspace{0.5cm}\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
+\newcommand{\satzung}[1]{\newpage\vspace{0.5cm}\refstepcounter{satzung}\addcontentsline{toc}{subsection}{SÄA \numberline{\arabic{satzung}} #1}\textbf{\Large SÄA \arabic{satzung} - #1}\medskip\\}
 
 \newcounter{wahlprogramm}[part]
-\newcommand{\wahlprogramm}[1]{\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
+\newcommand{\wahlprogramm}[1]{\newpage\vspace{0.5cm}\refstepcounter{wahlprogramm}\addcontentsline{toc}{subsection}{WPA \numberline{\arabic{wahlprogramm}} #1}\textbf{\Large WPA \arabic{wahlprogramm} - #1}\smallskip\\}
 
 \newcounter{positionspapier}[part]
-\newcommand{\positionspapier}[1]{\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
+\newcommand{\positionspapier}[1]{\newpage\vspace{0.5cm}\refstepcounter{positionspapier}\addcontentsline{toc}{subsection}{PP \numberline{\arabic{positionspapier}} #1}\textbf{\Large PP \arabic{positionspapier} - #1}\smallskip\\}
 
 \newcounter{sonstigerantrag}[part]
-\newcommand{\sonstigerantrag}[1]{\vspace{0.5cm}\refstepcounter{sonstigerantrag}\addcontentsline{toc}{subsection}{SA \numberline{\arabic{sonstigerantrag}} #1}\textbf{\Large SA \arabic{sonstigerantrag} - #1}\smallskip\\}
+\newcommand{\sonstigerantrag}[1]{\newpage\vspace{0.5cm}\refstepcounter{sonstigerantrag}\addcontentsline{toc}{subsection}{SA \numberline{\arabic{sonstigerantrag}} #1}\textbf{\Large SA \arabic{sonstigerantrag} - #1}\smallskip\\}
 
 \newcounter{goantrag}[part]
-\newcommand{\goantrag}[1]{\vspace{0.5cm}\refstepcounter{goantrag}\addcontentsline{toc}{subsection}{GOA \numberline{\arabic{goantrag}} #1}\textbf{\Large GOA \arabic{goantrag} - #1}\smallskip\\}
+\newcommand{\goantrag}[1]{\newpage\vspace{0.5cm}\refstepcounter{goantrag}\addcontentsline{toc}{subsection}{GOA \numberline{\arabic{goantrag}} #1}\textbf{\Large GOA \arabic{goantrag} - #1}\smallskip\\}
 
 \makeatletter
 \@addtoreset{section}{part}
